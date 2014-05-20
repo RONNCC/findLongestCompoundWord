@@ -1,0 +1,47 @@
+FindLongest Program - Shomiron Ghose
+
+=======
+Summary
+=======
+Uses a trie and a set of lengths to find the k longest
+'compound' words, words that can be formed from other words,
+efficiently. 
+
+
+=============
+Compatability
+=============
+Does not use C++11 extensions as they are not all fully implemented
+across compilers
+
+=====
+Usage
+=====
+
+to:
+    - make the file: `make`
+    - delete generated files: `make clean`
+    - verify memory is completely freed, (depends on valgrind)
+        you can run: `make checkmem`
+        after running `make` first
+    - profile the program: `make profile` (depends on gprof)
+
+============
+Dependencies
+============
+dependencies.txt lists all dependencies of findLongest.cpp including
+the system dependencies.
+
+========
+Comments
+========
+
+Unfortunately as expected  we find some of the most time consuming operations
+are the string parsing ones :(. With preprocessing time and further
+assumptions, we can speed up the actual computation time significantly
+more, in addition we can consider the use of vector operations to reduce
+the number of trie nodes created and increase thoroughput. 
+
+In addition, our malloc/free is taking up quite a bit of time, using a 
+thread-safe free and depending on our use case, we could use a parallel
+implementation of freeing the trie. 
