@@ -15,7 +15,7 @@ findLongest: $(OBJ)
 
 #clean any old files generated from source
 clean:
-	rm -f *.o *.out *~ $(BINS) callgrind* prof*
+	rm -f *.o *.out *~ $(BINS) callgrind* prof* *.zip
 
 #run valgrind to check the binary for memory leaks (requires valgrind)
 checkmem: $(OBJ)
@@ -29,6 +29,12 @@ profile: $(OBJ)
 	@gprof findLongestProf gmon.out > prof_analysis.txt
 	@echo "Please Read the prof_analysis.txt file for the profile output"
 
+#make the file and time it
 time: $(OBJ)
 	make
 	python time.py ./findLongest
+
+#put all of the code into a zipped_file
+zip:
+	make clean
+	zip ghose_zipped_challenge *
