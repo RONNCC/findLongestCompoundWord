@@ -18,12 +18,23 @@ across compilers
 Usage
 =====
 
+Run `make` and then `./findLongest` to run it and output results for
+wordsforproblem.txt. 
+
 to:
     - make the file: `make`
     - delete generated files: `make clean`
     - verify memory is completely freed, (depends on valgrind)
         run: `make checkmem`
     - profile the program: `make profile` (depends on gprof)
+    - run and time the program: `make time` (depends on time.py)
+
+====
+Help
+====
+
+running ./findCommand gives usage information for it
+python time.py -h gives usage help for time.py
 
 ============
 Dependencies
@@ -43,4 +54,4 @@ the number of trie nodes created and increase thoroughput.
 
 In addition, our malloc/free is taking up quite a bit of time, using a 
 thread-safe free and depending on our use case, we could use a parallel
-implementation of freeing the trie. 
+implementation of freeing the trie.

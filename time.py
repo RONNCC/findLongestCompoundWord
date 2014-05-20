@@ -1,4 +1,4 @@
-# timer for an executable written in a script style
+# timer for an arbitrary executable written in a script style
 # Shomiron Ghose (RONNCC)
 
 # is this windows or linux

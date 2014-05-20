@@ -18,7 +18,7 @@ clean:
 	rm -f *.o *.out *~ $(BINS) callgrind* prof*
 
 #run valgrind to check the binary for memory leaks (requires valgrind)
-checkmem:
+checkmem: $(OBJ)
 	make
 	valgrind --tool=memcheck --leak-check=yes ./findLongest
 
@@ -28,3 +28,7 @@ profile: $(OBJ)
 	@./findLongestProf > /dev/null 2>&1
 	@gprof findLongestProf gmon.out > prof_analysis.txt
 	@echo "Please Read the prof_analysis.txt file for the profile output"
+
+time: $(OBJ)
+	make
+	python time.py ./findLongest
