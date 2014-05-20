@@ -22,8 +22,7 @@ to:
     - make the file: `make`
     - delete generated files: `make clean`
     - verify memory is completely freed, (depends on valgrind)
-        you can run: `make checkmem`
-        after running `make` first
+        run: `make checkmem`
     - profile the program: `make profile` (depends on gprof)
 
 ============

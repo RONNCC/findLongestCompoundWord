@@ -1,5 +1,5 @@
-CC     = g++ #I built using g++ and clang++
-CFLAGS = -O3 -march=native #march doesn't help much in this unfortunately
+CC     = g++ # I built using g++ and clang++
+CFLAGS = -O3 # ask the compiler to optimize for us
 DEPS   =
 OBJ    = findLongest.o 
 LIBS   = 
@@ -19,6 +19,7 @@ clean:
 
 #run valgrind to check the binary for memory leaks (requires valgrind)
 checkmem:
+	make
 	valgrind --tool=memcheck --leak-check=yes ./findLongest
 
 #use gprof to profile the program (requires gprof)

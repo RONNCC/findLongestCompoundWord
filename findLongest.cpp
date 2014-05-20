@@ -6,9 +6,14 @@
  * rather than a specific one
  */
 
+// for input, output and the filestream
 #include <iostream>
 #include <fstream>
+
+//for string operations
 #include <string>
+
+//so we can use the STL containers and iterators
 #include <vector>
 #include <map>
 #include <set>
@@ -164,7 +169,7 @@ bool findInTrie(trie *node, const char *str, int start, int end, int& mid) {
 
         pch++;
         subnode = subnode->edges[ch];
-        if (i >= mid && subnode->isWord) {
+        if (subnode->isWord && i >= mid ) {
             mid = i;
             return true;
         }
